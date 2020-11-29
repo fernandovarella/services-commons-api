@@ -1,0 +1,7 @@
+mvn install:install-file -Dfile=c:\kaptcha-{version}.jar -DgroupId=com.google.code 
+    -DartifactId=kaptcha -Dversion={version} -Dpackaging=jar
+	
+	
+mvn install:install-file -Dfile="C:\dev\git\services-commons-api\dist\services-commons-api-0.0.1-SNAPSHOT.jar" -DgroupId="com.fernando.services.commons.api" -DartifactId="services-commons-api" -Dversion="0.0.1-SNAPSHOT" -Dpackaging="jar"
+
+mvn install:install-file -Dfile=C:/dev/git/services-commons-api/dist/services-commons-api-0.0.1-SNAPSHOT.jar -DgroupId=com.fernando.services.commons.api -DartifactId=services-commons-api -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar
