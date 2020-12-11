@@ -8,6 +8,7 @@ import com.fernando.services.commons.api.model.DefaultEntity;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 
@@ -25,18 +26,33 @@ public abstract class DefaultServiceImpl<T extends DefaultEntity<K>, K> implemen
     }
 
     @Override
-    public List<T> list() {
+    public List<T> listAll() {
         return defaultRepository.findAll();
     }
 
     @Override
-    public Page<T> list(Pageable pageable) {
+    public List<T> listAll(Sort sort) {
+        return defaultRepository.findAll(sort);
+    }
+
+    @Override
+    public Page<T> listAll(Pageable pageable) {
         return defaultRepository.findAll(pageable);
     }
 
     @Override
     public List<T> listByExample(Example<T> example) {
         return defaultRepository.findAll(example);
+    }
+
+    @Override
+    public List<T> listByExample(Example<T> example, Sort sort) {
+        return defaultRepository.findAll(example, sort);
+    }
+
+    @Override
+    public Page<T> listByExample(Example<T> example, Pageable pageable) {
+        return defaultRepository.findAll(example, pageable);
     }
 
     @Override

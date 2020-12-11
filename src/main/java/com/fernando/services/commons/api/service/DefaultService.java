@@ -7,16 +7,18 @@ import com.fernando.services.commons.api.model.DefaultEntity;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 
 public interface DefaultService<T extends DefaultEntity<K>, K> {
     
     public T get(K id);
 
-    public List<T> list();
-
-    public Page<T> list(Pageable pageable);
-
+    public List<T> listAll();
+    public List<T> listAll(Sort sort);
+    public Page<T> listAll(Pageable pageable);
     public List<T> listByExample(Example<T> example);
+    public List<T> listByExample(Example<T> example, Sort sort);
+    public Page<T> listByExample(Example<T> example, Pageable pageable);
 
     public T create(T entity);
 
