@@ -16,6 +16,7 @@ public abstract class DefaultServiceImpl<T extends DefaultEntity<K>, K> implemen
 
     protected MongoRepository<T, K> defaultRepository;
 
+
     protected void setRepository(MongoRepository<T, K> repository) {
         defaultRepository = repository;
     }

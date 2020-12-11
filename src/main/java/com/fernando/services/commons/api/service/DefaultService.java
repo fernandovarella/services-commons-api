@@ -10,6 +10,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
 public interface DefaultService<T extends DefaultEntity<K>, K> {
+
+    public void initRepository();
     
     public T get(K id);
 
